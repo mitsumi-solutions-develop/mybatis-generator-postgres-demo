@@ -31,5 +31,6 @@ jobs:
       - name: Test with Maven
         run: |
           cd ./src/server-app/mybatis-generator-postgres-demo
+          mvn install
           mvn test
-
+          
