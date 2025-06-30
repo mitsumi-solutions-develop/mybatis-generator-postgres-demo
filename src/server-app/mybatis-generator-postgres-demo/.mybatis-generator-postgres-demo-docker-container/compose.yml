@@ -1,0 +1,20 @@
+services:
+  mybatis-postgresql-extension-service:
+    image: postgres:17.4
+    container_name: mybatis-postgresql-extension-demo-container
+    ports:
+      - 15432:5432
+    volumes:
+      - ./database/postgresql/init:/docker-entrypoint-initdb.d
+      - mybatis-postgresql-extension-demo-data-storage:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+      PGDATA: /var/lib/postgresql/data/pgdata
+      TZ: Asia/Tokyo
+    command: postgres -c 'max_connections=1000'
+    restart: always
+    user: root
+volumes:
+  mybatis-postgresql-extension-demo-data-storage:
