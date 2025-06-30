@@ -1,0 +1,12 @@
+openapi: 3.1.1
+info:
+  description: Enumeration Schema for database enum columns
+  version: 1.0.0
+  title: Enumeration Schema for database enum columns
+components:
+  schemas:
+    user_type_enum:
+      type: string
+      enum:
+        - USER
+        - ADMIN

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="/.mybatis-generator-postgres-demo-docker-container/database/postgresql/init/csv-data/demo-postgresql/UTF-8/0009-tbl_company.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/.mybatis-generator-postgres-demo-docker-container/database/postgresql/init/csv-data/demo-postgresql/UTF-8/0010-tbl_user.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/demo/src/test/resources/test-data/io.github.mitsumi.solutions.mybatis.generator.postgres.demo.TestDemo/tbl_company.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/demo/src/test/resources/test-data/io.github.mitsumi.solutions.mybatis.generator.postgres.demo.TestDemo/tbl_user.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
