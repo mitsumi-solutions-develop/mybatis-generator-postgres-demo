@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.mitsumi-solutions-develop</groupId>
+    <artifactId>mybatis-generator-postgres-demo</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <mybatis-generator-postgres-demo.version>1.0.0</mybatis-generator-postgres-demo.version>
+
+        <bxslider.version>4.2.12</bxslider.version>
+        <checkstyle.version>3.1.1</checkstyle.version>
+        <com-google-zxing-core.version>3.5.3</com-google-zxing-core.version>
+        <com-google-zxing-javase.version>3.5.3</com-google-zxing-javase.version>
+        <dbunit.version>2.8.0</dbunit.version>
+        <findbugs-jsr305-version>3.0.2</findbugs-jsr305-version>
+        <guava.version>33.4.8-jre</guava.version>
+        <hibernate-validator.version>9.0.1.Final</hibernate-validator.version>
+        <io.swagger.swagger-annotations.version>2.0.0-rc2</io.swagger.swagger-annotations.version>
+        <io.swagger.core.v3.swagger-annotations.version>2.2.9</io.swagger.core.v3.swagger-annotations.version>
+        <jackson-annotations.version>3.0-rc5</jackson-annotations.version>
+        <jackson-databind-nullable.version>0.2.6</jackson-databind-nullable.version>
+        <jackson-module-kotlin.version>2.13.1</jackson-module-kotlin.version>
+        <jackson-threetenbp.version>2.15.2</jackson-threetenbp.version>
+        <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
+        <janino.version>3.1.12</janino.version>
+        <java-jwt.version>4.5.0</java-jwt.version>
+        <java-uuid-generator.version>5.1.0</java-uuid-generator.version>
+        <jaxb.version>4.0.5</jaxb.version>
+        <jersey-media.version>4.0.0-M2</jersey-media.version>
+        <jjwt.version>0.12.6</jjwt.version>
+        <logback-access-spring-boot-starter.version>4.7.0</logback-access-spring-boot-starter.version>
+        <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
+        <mitsumi-solutions.java-functions.version>1.0.4</mitsumi-solutions.java-functions.version>
+        <mitsumi-solutions.java-shared-utils.version>1.0.3-alpha</mitsumi-solutions.java-shared-utils.version>
+        <mitsumi-solutions.mybatis-postgres-extension-types.version>1.0.1</mitsumi-solutions.mybatis-postgres-extension-types.version>
+        <mitsumi-solutions.spring-dbunit-postgres.version>1.0.1</mitsumi-solutions.spring-dbunit-postgres.version>
+        <mitsumi-solutions.spring-json.version>1.0.7</mitsumi-solutions.spring-json.version>
+        <modelmapper.version>3.2.4</modelmapper.version>
+        <mybatis-dynamic-sql.version>1.5.2</mybatis-dynamic-sql.version>
+        <mybatis-spring-boot.version>3.0.4</mybatis-spring-boot.version>
+        <spotbugs-annotations.version>4.9.3</spotbugs-annotations.version>
+        <springdoc-openapi-starter-webmvc-ui.version>2.8.9</springdoc-openapi-starter-webmvc-ui.version>
+        <spring-test-dbunit.version>1.3.0</spring-test-dbunit.version>
+    </properties>
+    <modules>
+        <module>demo</module>
+        <module>generated</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>demo</artifactId>
+                <version>${mybatis-generator-postgres-demo.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>generated</artifactId>
+                <version>${mybatis-generator-postgres-demo.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson-annotations.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-kotlin -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.module</groupId>
+                <artifactId>jackson-module-kotlin</artifactId>
+                <version>${jackson-module-kotlin.version}</version>
+            </dependency>
+            <!--java-uuid-generator -->
+            <dependency>
+                <groupId>com.fasterxml.uuid</groupId>
+                <artifactId>java-uuid-generator</artifactId>
+                <version>${java-uuid-generator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.joschi.jackson</groupId>
+                <artifactId>jackson-datatype-threetenbp</artifactId>
+                <version>${jackson-threetenbp.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.github.spotbugs/spotbugs-annotations -->
+            <dependency>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-annotations</artifactId>
+                <version>${spotbugs-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.springtestdbunit</groupId>
+                <artifactId>spring-test-dbunit</artifactId>
+                <version>${spring-test-dbunit.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.google.zxing/core -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>core</artifactId>
+                <version>${com-google-zxing-core.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.google.zxing/javase -->
+            <dependency>
+                <groupId>com.google.zxing</groupId>
+                <artifactId>javase</artifactId>
+                <version>${com-google-zxing-javase.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.akkinoc.spring.boot</groupId>
+                <artifactId>logback-access-spring-boot-starter</artifactId>
+                <version>${logback-access-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.github.mitsumi-solutions-develop/java-functions -->
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>java-functions</artifactId>
+                <version>${mitsumi-solutions.java-functions.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.github.mitsumi-solutions-develop/java-shared-utils -->
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>java-shared-utils</artifactId>
+                <version>${mitsumi-solutions.java-shared-utils.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>mybatis-postgres-extension-types</artifactId>
+                <version>${mitsumi-solutions.mybatis-postgres-extension-types.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.github.mitsumi-solutions-develop/spring-dbunit-postgres -->
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>spring-dbunit-postgres</artifactId>
+                <version>${mitsumi-solutions.spring-dbunit-postgres.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.github.mitsumi-solutions-develop/spring-json -->
+            <dependency>
+                <groupId>io.github.mitsumi-solutions-develop</groupId>
+                <artifactId>spring-json</artifactId>
+                <version>${mitsumi-solutions.spring-json.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${io.swagger.swagger-annotations.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations -->
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${io.swagger.core.v3.swagger-annotations.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>${jakarta.annotation-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.logstash.logback</groupId>
+                <artifactId>logstash-logback-encoder</artifactId>
+                <version>${logstash-logback-encoder.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>nz.net.ultraq.thymeleaf</groupId>
+                <artifactId>thymeleaf-layout-dialect</artifactId>
+                <version>${thymeleaf-layout-dialect.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+            <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>${httpclient5.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>${janino.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>${jaxb.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.glassfish.jersey.media</groupId>
+                <artifactId>jersey-media-moxy</artifactId>
+                <version>${jersey-media.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator-annotation-processor -->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-annotation-processor</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.modelmapper</groupId>
+                <artifactId>modelmapper</artifactId>
+                <version>${modelmapper.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable -->
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>${jackson-databind-nullable.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter-test</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.mybatis.dynamic-sql/mybatis-dynamic-sql -->
+            <dependency>
+                <groupId>org.mybatis.dynamic-sql</groupId>
+                <artifactId>mybatis-dynamic-sql</artifactId>
+                <version>${mybatis-dynamic-sql.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
