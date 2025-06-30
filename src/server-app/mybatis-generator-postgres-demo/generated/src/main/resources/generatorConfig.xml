@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="tables" targetRuntime="io.github.mitsumi.solutions.mybatis.generator.postgres.dynamic.sql.IntrospectedTableMyBatis3PostgresDynamicSqlImpl">
+        <property name="javaFileEncoding" value="UTF-8" />
+
+        <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection
+                driverClass="org.postgresql.Driver"
+                connectionURL="jdbc:postgresql://localhost:15432/demo-postgresql"
+                userId="postgres"
+                password="postgres"/>
+
+        <javaTypeResolver type="io.github.mitsumi.solutions.mybatis.generator.postgres.resolvers.JavaTypeResolver">
+            <property name="useJSR310Types" value="true"/>
+            <property name="jsonModelsPackage" value="io.github.mitsumi.solutions.mybatis.postgres.generated.json.models"/>
+            <property name="enumerationsPackage" value="io.github.mitsumi.solutions.mybatis.postgres.generated.enumerations"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator
+                targetPackage="io.github.mitsumi.solutions.mybatis.postgres.generated.entities"
+                targetProject="src/main/java"/>
+
+        <javaClientGenerator
+                targetPackage="io.github.mitsumi.solutions.mybatis.postgres.generated.mappers"
+                targetProject="src/main/java"/>
+
+        <table tableName="tbl_%"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true">
+            <generatedKey column="{primary_key}" sqlStatement="JDBC" />
+        </table>
+
+    </context>
+</generatorConfiguration>
